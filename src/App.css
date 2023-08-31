@@ -1,38 +1,45 @@
+/* Center aligns the content within the .App class */
 .App {
   text-align: center;
 }
 
+/* Sets the height and disables pointer events for the .App-logo class */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
+/* Applies animation to .App-logo when motion is not reduced */
 @media (prefers-reduced-motion: no-preference) {
+  /* Defines animation for spinning the .App-logo */
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
+/* Styles for the header section of the app */
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #282c34; /* Background color */
+  min-height: 100vh; /* Minimum height */
+  display: flex; /* Displays as a flex container */
+  flex-direction: column; /* Flex direction is column */
+  align-items: center; /* Aligns items horizontally */
+  justify-content: center; /* Aligns items vertically */
+  font-size: calc(10px + 2vmin); /* Sets font size */
+  color: white; /* Text color */
 }
 
+/* Styles for hyperlinks in the app */
 .App-link {
-  color: #61dafb;
+  color: #61dafb; /* Link color */
 }
 
+/* Keyframes for spinning animation of the .App-logo */
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0deg); /* Initial rotation angle */
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(360deg); /* Final rotation angle */
   }
 }
