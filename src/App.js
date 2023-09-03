@@ -8,6 +8,7 @@ function App() {
     // Outer container with the class "App"
     <div className="App">
       <h1>Home Page</h1>
+      <Button onClick={}>NEXT</Button>
     </div>
   );
 }
