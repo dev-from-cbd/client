@@ -34,6 +34,12 @@
   color: #61dafb; /* Link color */
 }
 
+.div_createPost {
+  width: 90%;
+  margin: auto auto;
+  text-align: center;
+}
+
 /* Keyframes for spinning animation of the .App-logo */
 @keyframes App-logo-spin {
   from {

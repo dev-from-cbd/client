@@ -10,11 +10,15 @@ import "./index.css";
 // Import the main application component.
 import App from "./App";
 
+import CreatePost from "./createPost";
+
 // Import a function for reporting web vitals.
 import reportWebVitals from "./reportWebVitals";
 
 // Import Bootstrap CSS for styling.
 import "bootstrap/dist/css/bootstrap.min.css";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Create a React root for rendering the application.
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -22,7 +26,12 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 // Render the main App component within a React Strict Mode.
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/create" element={<CreatePost />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
