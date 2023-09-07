@@ -3,6 +3,16 @@
   text-align: center;
 }
 
+.className_App {
+  width: 90%;
+  margin: auto auto;
+  text-align: center;
+}
+
+.button_App {
+  width: 100%;
+}
+
 /* Sets the height and disables pointer events for the .App-logo class */
 .App-logo {
   height: 40vmin;
@@ -38,6 +48,10 @@
   width: 90%;
   margin: auto auto;
   text-align: center;
+}
+
+.button_createPost {
+  width: 100%;
 }
 
 /* Keyframes for spinning animation of the .App-logo */
