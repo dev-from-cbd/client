@@ -1,5 +1,5 @@
 import "./App.css";
-import { Button } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 function CreatePost() {
@@ -8,6 +8,9 @@ function CreatePost() {
   return (
     <div className="div_createPost">
       <h1>Create a post</h1>
+      <Form>
+        <Form.Group>Form</Form.Group>
+      </Form>
       <Button className="button_createPost" onClick={() => navigate(-1)}>
         BACK
       </Button>
