@@ -19,6 +19,14 @@
   pointer-events: none;
 }
 
+.form_Control_title {
+  margin-bottom: 1rem;
+}
+
+.form_Control_description {
+  margin-bottom: 1rem;
+}
+
 /* Applies animation to .App-logo when motion is not reduced */
 @media (prefers-reduced-motion: no-preference) {
   /* Defines animation for spinning the .App-logo */
