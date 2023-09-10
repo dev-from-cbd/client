@@ -11,6 +11,16 @@ function CreatePost() {
     description: "",
   });
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setPost((prev) => {
+      return {
+        ...prev,
+        [name]: value,
+      };
+    });
+  };
+
   return (
     <div className="div_createPost">
       <h1>Create a post</h1>
@@ -18,13 +28,14 @@ function CreatePost() {
         <Form.Group>
           <Form.Control
             name="title"
-            value={title}
+            value={post.title}
             placeholder="Title"
             className="form_Control_title"
             onChange={handleChange}
           />
           <Form.Control
             name="description"
+            value={post.description}
             placeholder="Description"
             className="form_Control_description"
             onChange={handleChange}
