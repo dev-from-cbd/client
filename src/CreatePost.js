@@ -1,8 +1,7 @@
 import "./App.css";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { handle } from "express/lib/application";
+import { useState, useEffect } from "react";
 
 function CreatePost() {
   const navigate = useNavigate();
@@ -20,6 +19,10 @@ function CreatePost() {
       };
     });
   };
+
+  useEffect(() => {
+    console.log(post);
+  }, [post]);
 
   return (
     <div className="div_createPost">
