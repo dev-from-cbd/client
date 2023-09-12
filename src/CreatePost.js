@@ -1,7 +1,8 @@
 import "./App.css";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import axios from "axios";
 
 function CreatePost() {
   const navigate = useNavigate();
@@ -20,9 +21,11 @@ function CreatePost() {
     });
   };
 
-  useEffect(() => {
-    console.log(post);
-  }, [post]);
+  const handleClick = (event) => {
+    event.preventDefault();
+
+    axios.post("http://localhost:3001/create");
+  };
 
   return (
     <div className="div_createPost">
@@ -44,6 +47,7 @@ function CreatePost() {
             onChange={handleChange}
           />
         </Form.Group>
+        <Button onClick={handleClick}>Create post</Button>
       </Form>
       <Button className="button_createPost" onClick={() => navigate(-1)}>
         BACK
