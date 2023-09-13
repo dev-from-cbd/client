@@ -24,7 +24,7 @@ function CreatePost() {
   const handleClick = (event) => {
     event.preventDefault();
 
-    axios.post("http://localhost:3001/create");
+    axios.post("/create", post).then((res) => console.log(res));
   };
 
   return (
@@ -47,9 +47,15 @@ function CreatePost() {
             onChange={handleChange}
           />
         </Form.Group>
-        <Button onClick={handleClick}>Create post</Button>
+        <Button
+          className="button_createPost"
+          variant="outline-success"
+          onClick={handleClick}
+        >
+          Create post
+        </Button>
       </Form>
-      <Button className="button_createPost" onClick={() => navigate(-1)}>
+      <Button className="button_back" onClick={() => navigate(-1)}>
         BACK
       </Button>
     </div>
