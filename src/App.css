@@ -3,66 +3,73 @@
   text-align: center;
 }
 
+/* Styles for the .className_App class */
 .className_App {
   width: 90%;
-  margin: auto auto;
-  text-align: center;
+  margin: auto auto; /* Centers the element horizontally and vertically */
+  text-align: center; /* Center aligns text within this element */
 }
 
+/* Styles for the .button_App class */
 .button_App {
   width: 100%;
 }
 
 /* Sets the height and disables pointer events for the .App-logo class */
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  height: 40vmin; /* Sets the height relative to the viewport size */
+  pointer-events: none; /* Disables pointer events on this element */
 }
 
+/* Styles for the .form_Control_title class */
 .form_Control_title {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; /* Adds space below this element */
 }
 
+/* Styles for the .form_Control_description class */
 .form_Control_description {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; /* Adds space below this element */
 }
 
 /* Applies animation to .App-logo when motion is not reduced */
 @media (prefers-reduced-motion: no-preference) {
   /* Defines animation for spinning the .App-logo */
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 20s linear; /* Spinning animation with specific properties */
   }
 }
 
-/* Styles for the header section of the app */
+/* Styles for the .App-header class, which is the header section of the app */
 .App-header {
   background-color: #282c34; /* Background color */
-  min-height: 100vh; /* Minimum height */
+  min-height: 100vh; /* Minimum height of the viewport */
   display: flex; /* Displays as a flex container */
   flex-direction: column; /* Flex direction is column */
   align-items: center; /* Aligns items horizontally */
   justify-content: center; /* Aligns items vertically */
-  font-size: calc(10px + 2vmin); /* Sets font size */
+  font-size: calc(10px + 2vmin); /* Sets font size relative to viewport size */
   color: white; /* Text color */
 }
 
-/* Styles for hyperlinks in the app */
+/* Styles for hyperlinks with the .App-link class */
 .App-link {
   color: #61dafb; /* Link color */
 }
 
+/* Styles for the .div_createPost class */
 .div_createPost {
   width: 90%;
-  margin: auto auto;
-  text-align: center;
+  margin: auto auto; /* Centers the element horizontally and vertically */
+  text-align: center; /* Center aligns text within this element */
 }
 
+/* Styles for the .button_createPost class */
 .button_createPost {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; /* Adds space below this element */
 }
 
+/* Styles for the .button_back class */
 .button_back {
   width: 100%;
 }
