@@ -1,25 +1,25 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
+  "short_name": "React App",                // Short name for the app
+  "name": "Create React App Sample",        // Full name of the app
+  "icons": [                                // Array of icons with different sizes and types
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "favicon.ico",                 // Source file for the icon
+      "sizes": "64x64 32x32 24x24 16x16",   // Icon sizes
+      "type": "image/x-icon"               // Icon file type
     },
     {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "logo192.png",                // Source file for a larger icon
+      "type": "image/png",                // Icon file type
+      "sizes": "192x192"                  // Icon size
     },
     {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "logo512.png",                // Source file for a larger icon
+      "type": "image/png",                // Icon file type
+      "sizes": "512x512"                  // Icon size
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "start_url": ".",                        // URL to open when the app is launched
+  "display": "standalone",                 // Display mode of the app
+  "theme_color": "#000000",                // Theme color for the app
+  "background_color": "#ffffff"            // Background color for the app
 }
