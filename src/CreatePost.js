@@ -40,15 +40,12 @@ function CreatePost() {
   };
 
   const handleClick = (event) => {
-    // Defining a function "handleClick" that takes an event as an argument.
     event.preventDefault();
-    // Preventing the default form submission behavior.
 
-    axios
-      .post("/create", post)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-    // Making a POST request to "/create" with the "post" data, and logging the response or error.
+    //axios
+    //.post("/create", post)
+    //.then((res) => console.log(res))
+    //.catch((err) => console.log(err));
   };
 
   return (
