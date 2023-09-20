@@ -42,10 +42,10 @@ function CreatePost() {
   const handleClick = (event) => {
     event.preventDefault();
 
-    //axios
-    //.post("/create", post)
-    //.then((res) => console.log(res))
-    //.catch((err) => console.log(err));
+    axios
+      .post("/create", post)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   };
 
   return (
