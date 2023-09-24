@@ -74,6 +74,12 @@
   width: 100%;
 }
 
+.div_Posts {
+  width: 90%;
+  text-align: center;
+  margin: auto auto;
+}
+
 /* Keyframes for spinning animation of the .App-logo */
 @keyframes App-logo-spin {
   from {
