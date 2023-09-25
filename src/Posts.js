@@ -1,10 +1,18 @@
 import "./App.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 function Posts() {
+  const [posts, setPosts] = useState([]);
+
   useEffect(() => {
-    axios.get("/posts");
+    axios
+      .get("/posts")
+      .then((res) => {
+        console.log(res);
+        setPosts(res.data);
+      })
+      .catch((err) => err);
   }, []);
 
   return (
