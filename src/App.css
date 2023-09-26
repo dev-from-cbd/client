@@ -80,6 +80,26 @@
   margin: auto auto;
 }
 
+.div_Post {
+  border: solid lightgray 1px;
+  border-radius: 7px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.div_Post_Button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  /*  border: solid gray 1px;
+  border-radius: 6px; */
+}
+
+.post_Button {
+  width: 100%;
+}
+
 /* Keyframes for spinning animation of the .App-logo */
 @keyframes App-logo-spin {
   from {
