@@ -2,8 +2,10 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 function Posts() {
+  const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -21,11 +23,20 @@ function Posts() {
       .delete(`/delete/${id}`)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
+
+    window.location.reload();
   };
 
   return (
     <div className="div_Posts">
       <h1>H1</h1>
+      <Button
+        className="button_Posts"
+        variant="outline-dark"
+        onClick={() => navigate(-1)}
+      >
+        Back
+      </Button>
       {posts ? (
         <>
           {posts.map((post) => {

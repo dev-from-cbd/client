@@ -105,6 +105,11 @@
   width: 100%;
 }
 
+.button_Posts {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
 /* Keyframes for spinning animation of the .App-logo */
 @keyframes App-logo-spin {
   from {
