@@ -1,35 +1,49 @@
+// Import the necessary CSS file and libraries/components.
 import "./App.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
+// Define the 'Posts' component.
 function Posts() {
+  // Initialize a navigation function using the 'useNavigate' hook.
   const navigate = useNavigate();
+
+  // Initialize a state variable 'posts' as an empty array using 'useState'.
   const [posts, setPosts] = useState([]);
 
+  // Use the 'useEffect' hook to fetch data when the component mounts.
   useEffect(() => {
+    // Send a GET request to "/posts" endpoint using Axios to retrieve data.
     axios
       .get("/posts")
       .then((res) => {
+        // Log the response data to the console.
         console.log(res);
+        // Update the 'posts' state with the data received.
         setPosts(res.data);
       })
-      .catch((err) => err);
-  }, []);
+      .catch((err) => err); // Handle errors if any.
+  }, []); // The empty dependency array ensures the effect runs only once.
 
+  // Define a function 'deletePost' to delete a post by its 'id'.
   const deletePost = (id) => {
+    // Send a DELETE request to the corresponding post ID.
     axios
       .delete(`/delete/${id}`)
       .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err)); // Handle errors if any.
 
+    // Reload the page to reflect changes (you might want to consider a more dynamic update).
     window.location.reload();
   };
 
+  // Render the 'Posts' component.
   return (
     <div className="div_Posts">
       <h1>H1</h1>
+      {/* Button for navigation with an onClick handler. */}
       <Button
         className="button_Posts"
         variant="outline-dark"
@@ -37,8 +51,11 @@ function Posts() {
       >
         Back
       </Button>
+
+      {/* Conditional rendering: Display posts if available, otherwise show an empty string. */}
       {posts ? (
         <>
+          {/* Map through 'posts' and render each post with buttons for actions. */}
           {posts.map((post) => {
             return (
               <div key={post._id} className="div_Post">
@@ -67,4 +84,5 @@ function Posts() {
   );
 }
 
+// Export the 'Posts' component.
 export default Posts;
