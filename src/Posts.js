@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { Modal } from "react-bootstrap";
 
 // Define the 'Posts' component.
 function Posts() {
@@ -39,6 +40,11 @@ function Posts() {
     window.location.reload();
   };
 
+  const updatePost = (post) => {
+    console.log(post);
+    handleShow();
+  };
+
   // Render the 'Posts' component.
   return (
     <div className="div_Posts">
@@ -52,6 +58,23 @@ function Posts() {
         Back
       </Button>
 
+      <Modal show="show" onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Update a post</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>Modal body</Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
       {/* Conditional rendering: Display posts if available, otherwise show an empty string. */}
       {posts ? (
         <>
@@ -62,7 +85,11 @@ function Posts() {
                 <h4>{post.title}</h4>
                 <p>{post.description}</p>
                 <div className="div_Post_Button">
-                  <Button variant="outline-info" className="post_Button_Update">
+                  <Button
+                    variant="outline-info"
+                    onClick={() => updatePost(post)}
+                    className="post_Button_Update"
+                  >
                     Update
                   </Button>
                   <Button
