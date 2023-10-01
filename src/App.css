@@ -110,6 +110,10 @@
   margin-bottom: 1rem;
 }
 
+.title_Form_Controls {
+  margin-bottom: 1rem;
+}
+
 /* Keyframes for spinning animation of the .App-logo */
 @keyframes App-logo-spin {
   from {

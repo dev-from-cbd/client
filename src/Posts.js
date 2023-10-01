@@ -6,46 +6,47 @@ import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { Modal } from "react-bootstrap";
 
-// Define the 'Posts' component.
 function Posts() {
-  // Initialize a navigation function using the 'useNavigate' hook.
   const navigate = useNavigate();
-
-  // Initialize a state variable 'posts' as an empty array using 'useState'.
   const [posts, setPosts] = useState([]);
+  const [updatedPost, setUpdatedPost] = useState({});
 
-  // Use the 'useEffect' hook to fetch data when the component mounts.
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   useEffect(() => {
-    // Send a GET request to "/posts" endpoint using Axios to retrieve data.
     axios
       .get("/posts")
       .then((res) => {
-        // Log the response data to the console.
         console.log(res);
-        // Update the 'posts' state with the data received.
         setPosts(res.data);
       })
       .catch((err) => err); // Handle errors if any.
   }, []); // The empty dependency array ensures the effect runs only once.
 
-  // Define a function 'deletePost' to delete a post by its 'id'.
   const deletePost = (id) => {
-    // Send a DELETE request to the corresponding post ID.
     axios
       .delete(`/delete/${id}`)
       .then((res) => console.log(res))
       .catch((err) => console.log(err)); // Handle errors if any.
-
-    // Reload the page to reflect changes (you might want to consider a more dynamic update).
     window.location.reload();
   };
 
   const updatePost = (post) => {
-    console.log(post);
+    setUpdatedPost(post);
     handleShow();
   };
 
-  // Render the 'Posts' component.
+  const handleChange = (e) => {
+    setUpdatedPost((prev) => {
+      return ({
+        ...prev,
+      [name]
+      });
+    });
+  };
+
   return (
     <div className="div_Posts">
       <h1>H1</h1>
@@ -62,9 +63,25 @@ function Posts() {
         <Modal.Header closeButton>
           <Modal.Title>Update a post</Modal.Title>
         </Modal.Header>
-
-        <Modal.Body>Modal body</Modal.Body>
-
+        <Modal.Body>
+          <Form>
+            <Form.Group>
+              <Form.Controls
+                className="title_Form_Controls"
+                placeholder="title"
+                name="title"
+                value={updatedPost.title ? updatedPost.title : ""}
+                onChange={handleChange}
+              />
+              <Form.Controls
+                name="title"
+                placeholder="description"
+                value={updatedPost.description ? updatedPost.description : ""}
+                onChange={handleChange}
+              />
+            </Form.Group>
+          </Form>
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
