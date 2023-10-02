@@ -2,7 +2,7 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Button } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { Modal } from "react-bootstrap";
 
@@ -39,12 +39,17 @@ function Posts() {
   };
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
     setUpdatedPost((prev) => {
-      return ({
+      return {
         ...prev,
-      [name]
-      });
+        [name]: value,
+      };
     });
+  };
+
+  const saveUpdatedPost = (e) => {
+    axios.put(`/update/${updatedPost._id}`);
   };
 
   return (
@@ -59,23 +64,23 @@ function Posts() {
         Back
       </Button>
 
-      <Modal show="show" onHide={handleClose}>
+      <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Update a post</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
             <Form.Group>
-              <Form.Controls
-                className="title_Form_Controls"
+              <Form.Control
+                className="title_Form_Control"
                 placeholder="title"
                 name="title"
                 value={updatedPost.title ? updatedPost.title : ""}
                 onChange={handleChange}
               />
-              <Form.Controls
-                name="title"
+              <Form.Control
                 placeholder="description"
+                name="description"
                 value={updatedPost.description ? updatedPost.description : ""}
                 onChange={handleChange}
               />
@@ -86,7 +91,7 @@ function Posts() {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={saveUpdatedPost}>
             Save changes
           </Button>
         </Modal.Footer>
