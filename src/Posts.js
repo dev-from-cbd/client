@@ -49,7 +49,13 @@ function Posts() {
   };
 
   const saveUpdatedPost = (e) => {
-    axios.put(`/update/${updatedPost._id}`);
+    axios
+      .put(`/update/${updatedPost._id}`, updatedPost)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+
+    handleClose();
+    window.location.reload();
   };
 
   return (
